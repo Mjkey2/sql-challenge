@@ -1,4 +1,5 @@
-CREATE TABLE Employees (
+-- is this class or table?
+CREATE TABLE Employees(
 	Emp_No INTEGER
 	Emp_Title_ID VARCHAR(5),
 	Salary INTEGER,
