@@ -1,4 +1,0 @@
-CREATE TABLE Titles(
-	Title_ID VARCHAR (5) PRIMARY KEY,
-	Title VARCHAR (20)
-);
