@@ -1,12 +1,33 @@
 -- is this class or table?
 CREATE TABLE Employees(
-	Emp_No INTEGER NOT NULL PRIMARY KEY,
+	Emp_No INTEGER NOT NULL,
 	Emp_Title_ID VARCHAR(5) NOT NULL,
 	Salary INTEGER NOT NULL,
 	Birthday TIMESTAMP NOT NULL,
 	First_Name VARCHAR(15) NOT NULL,
 	Last_Name VARCHAR (15) NOT NULL,
-	Sex VARCHAR (6) NOT NULL,
+	Sex VARCHAR (1) NOT NULL,
 	Hire_date TIMESTAMP NOT NULL,
-	Dept_No VARCHAR
+	Dept_No VARCHAR (4) NOT NULL,
+	PRIMARY KEY (Emp_No)
+);
+
+CREATE TABLE Departments(
+	Dept_Name VARCHAR NOT NULL,
+	Dept_No VARCHAR NOT NULL,
+	Dept_Man INTEGER NOT NULL,
+	PRIMARY KEY (Dept_No)
+);
+
+
+CREATE TABLE Titles(
+	Title_ID VARCHAR (5) NOT NULL,
+	Title VARCHAR (20) NOT NULL
+);
+	
+CREATE TABLE Managers(
+	Man_EmpNo INTEGER NOT NULL,
+	Man_DepNo VARCHAR (4) NOT NULL,
+	FOREIGN KEY (Man_EmpNo) REFERENCES Employees(Emp_No),
+	FOREIGN KEY (Man_DepNo) REFERENCES Departments(Dept_No)
 );
